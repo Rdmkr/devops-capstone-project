@@ -141,3 +141,17 @@ def check_content_type(media_type):
         status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
         f"Content-Type must be {media_type}",
     )
+
+######################################################################
+# RAISE EXCEPTION
+######################################################################
+
+@app.route("/accounts/exception", methods=["GET"])
+def exception():
+    """
+    Raises and exception for testing purposes
+    """
+    abort(
+        status.HTTP_500_INTERNAL_SERVER_ERROR,
+        f"Exception raised",
+    )
